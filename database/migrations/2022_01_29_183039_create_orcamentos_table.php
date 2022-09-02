@@ -25,6 +25,7 @@ class CreateOrcamentosTable extends Migration
 //          $table->double('Valor');
             $table->double('Desconto')->nullable();
             $table->double('Taxas')->nullable();
+            $table->string('Status')->nullable();
 
             // $table->unsignedInteger('empresa_id');
             // $table->foreign('empresa_id')->references('id')->on('empresas');

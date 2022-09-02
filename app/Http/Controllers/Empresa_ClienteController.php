@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa_cliente;
+use App\Models\Empresa_Cliente;
 use App\Exports\ClienteExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Concerns\FromCollection;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa_cliente;
+use App\Models\Empresa_Cliente;
 use Illuminate\Http\Request;
 use App\Models\Orcamento;
 use App\Models\Empresa;
@@ -117,6 +117,8 @@ class OrcamentoController extends Controller
 
         $titulo = "Edita Cliente";
 
+      
+
 
             return view('orcamento.edit', [
                 'editar_orcamento' => $editar_orcamento, 
@@ -125,29 +127,48 @@ class OrcamentoController extends Controller
                 'produto' => $produto,
             
             compact('titulo')]);
-    }
+    
+        }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+
+
+    $Orcamento = Orcamento::find($id);
+
+   // $Orcamento = Orcamento::create($request->all());
         
-       $Orcamento = Orcamento::create($request->all());
-        
-       Orcamento::findOrFail($request->id)->update($request->all());
+     Orcamento::findOrFail($request->id)->update($request->all());
        
        // Orcamento::findOrFail($request->id) -> update();
        
+       $Orcamento->save();
 
        
        
-       $products = $request->input('products', []);
-       $quantities = $request->input('quantities', []);
-       for ($product=0; $product < count($products); $product++) {
-           if ($products[$product] != '') {
-               $Orcamento->produto()->attach($products[$product], ['Quantidade' => $quantities[$product]]);
-            }
-        }
+    //    $products = $request->input('products', []);
+    //    $quantities = $request->input('quantities', []);
+    //    for ($product=0; $product < count($products); $product++) {
+    //        if ($products[$product] != '') {
+    //            $Orcamento->produto()->attach($products[$product], ['Quantidade' => $quantities[$product]]);
+    //         }
+    //     }
         
         toast('Orçamento editado com sucesso!','success');
+
+        return redirect('/orcamento/show_orcamento');
+    }
+
+
+    public function update_status(Request $request, $id)
+    
+    {
+        $order = Orcamento::find($id);
+        $order -> Status  = $request -> Status;
+        $order -> save();
+   
+        
+        toast('Status editado com sucesso!','success');
 
         return redirect('/orcamento/show_orcamento');
     }
