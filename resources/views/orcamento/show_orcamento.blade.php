@@ -88,7 +88,7 @@
           <div class="product-cell price">Valor<button class="sort-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
           </button></div>
-          <div class="product-cell price">Status<button class="sort-button">
+          <div class="product-cell status">Status<button class="sort-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/></svg>
             </button></div>
           <div class="product-cell acao">Ação<button class="sort-button">
@@ -120,99 +120,81 @@
         <div class="product-cell sales"><span class="cell-label">Quantidade: </span> {{$order->Quantidade}} </div>
         {{-- <div class="product-cell stock"><span class="cell-label">Garantia:</span>{{$order->Garantia}} </div> --}}
         <div class="product-cell price"><span class="cell-label">Valor:</span> R$ {{$order->Valor}}  </div>
-        <div class="product-cell price"><span class="cell-label"> --- </span> 
+        <div class="product-cell price"><span class="cell-label">  </span> 
           
           <div class="product-cell status-cell">
           <span class="cell-label">Status:</span>
-          @if ($order->Status == 'Cancelada')
-          <span class="status active">Cancelada</span>      
-          @endif
 
-          @if ($order->Status == 'Venda Realizada')
+
+          @if ($order->Status == 'Cancelado')
+          <span class="status active">Cancelado</span>      
+
+          @elseif  ($order->Status == 'Venda Realizada')
           <span class="status active">Venda Realizada</span> 
-          @endif
+          
 
-          @if ($order->Status == 'Pendente')
+          @elseif  ($order->Status == 'Pendente')
           <span class="status active">Pendente</span> 
+
+          {{-- @if ($order->Status == 'Cancelada')
+          <span class="status active">Cancelada</span>   --}}    
+          @else
+        <span class="status disabled">Desativado</span>
           @endif
- 
         
         </div> 
       </div>
-        <div class="product-cell price"><span class="cell-label">Alterar Status:</span> 
-        
-          <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">  Alterar Status  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+ 
 
-        <form action="{{asset('/orcamento/update/status')}}/{{$order->id}}" method="POST" enctype="multipart/form-data"> 
-          @csrf
-          @method('PUT')
-
-          <div class="col-md-12 mb-4">
-            <label for="validationDefault04"> Selecione o Status do Orçamento: </label>
-            <select name="Status" id="Status" class="form-control">
-              <option value="Venda Realizada"> Venda Realizada </option>
-              <option value="Pendente">        Pendente </option>
-              <option value="Cancelada">       Cancelada </option>
-            </select>    
-          </div> 
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Salvar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-        
-        </div>
         <div class="product-cell acao"><span class="cell-label">Ação:</span>  
-        <a href="{{asset('/orcamento/edit/')}}/{{$order->id}}" class="btn btn-info edit-btn"> <ion-icon name="create-outline"></ion-icon> Editar </a>&nbsp
         
-        <form action="{{asset('/orcamento')}}/{{$order->id}}" method="POST">
+         <form action="{{asset('/orcamento')}}/{{$order->id}}" method="POST">
         @csrf
         @method('DELETE')
 
         <button type="submit" class="btn btn-danger delete-btn"> <ion-icon name="trash-outline"> </ion-icon>Deletar</button>
-        </form> 
+        </form>  
       </div>
+      <div class="product-cell status"><span class="cell-label"> </span> 
 
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Status
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item bg-success text-light" href="{{asset('/orcamento/update/status_vendarealizada')}}/{{$order->id}}"> Venda Realizada</a>
+            <a class="dropdown-item bg-warning text-light" href="{{asset('/orcamento/update/status_pendente')}}/{{$order->id}}"> Pendente</a>
+            <a class="dropdown-item bg-danger text-light" href="{{asset('/orcamento/update/status_cancelado')}}/{{$order->id}}"> Cancelar</a>
+          </div>
+        </div>
+  
+      </div>
+       
+  
 <div class="btn-group product-cell pdf " role="group">
   <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn-info edit-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Gerar PDF
   </button>
+  
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-    <a class="dropdown-item" href="{{asset('/orcamento/modelos/modelo1/')}}/{{$order->id}}">Modelo 1</a>
-    <a class="dropdown-item" href="{{asset('/orcamento/modelos/modelo2/')}}/{{$order->id}}">Modelo 2</a>
-    <a class="dropdown-item" href="{{asset('/orcamento/modelos/modelo3/')}}/{{$order->id}}">Modelo 3</a>
-    <a class="dropdown-item" href="{{asset('/orcamento/modelos/modelo4/')}}/{{$order->id}}">Modelo 4</a>
-    <a class="dropdown-item" href="{{asset('/orcamento/modelos/modelo5/')}}/{{$order->id}}">Modelo 5</a>
+    
+    <a class="dropdown-item"        href="{{asset('/orcamento/modelos/modelo1/')}}/{{$order->id}}">Modelo 1</a>
+    <a class="dropdown-item"        href="{{asset('/orcamento/modelos/modelo2/')}}/{{$order->id}}">Modelo 2</a>
+    <a class="dropdown-item"        href="{{asset('/orcamento/modelos/modelo3/')}}/{{$order->id}}">Modelo 3</a>
+    <a class="dropdown-item"        href="{{asset('/orcamento/modelos/modelo4/')}}/{{$order->id}}">Modelo 4</a>
+    <a class="dropdown-item"        href="{{asset('/orcamento/modelos/modelo5/')}}/{{$order->id}}">Modelo 5</a>
     <a class="dropdown-item active" href="{{asset('/orcamento/modelos/modelo6/')}}/{{$order->id}}">Modelo 6</a>
   </div>
 </div>
 
-      </div>
-@endforeach
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+@endforeach
+</div>
+</div>
+</div>
+</div>
 </div>
 <!-- partial -->
 @endsection

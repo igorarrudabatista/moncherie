@@ -160,15 +160,54 @@ class OrcamentoController extends Controller
     }
 
 
-    public function update_status(Request $request, $id)
-    
-    {
-        $order = Orcamento::find($id);
-        $order -> Status  = $request -> Status;
-        $order -> save();
-   
-        
-        toast('Status editado com sucesso!','success');
+    // public function update_status(Request $request, $id)    {
+
+    //     // $order = Orcamento::find($id);
+    //     // $order -> Status  = $request -> Status;
+    //     // $order -> save();
+
+
+    //     $order = Orcamento::find($id);
+
+    //    // $order =  new Orcamento();
+    //    $cancelado = 'Cancelado';
+    //    $order -> Status   = $cancelado;
+    //    $order -> save();
+           
+    //     toast('Status do Orçamento alterado para Cancelado com sucesso!','success');
+
+    //     return redirect('/orcamento/show_orcamento');
+    // }
+    public function update_vendarealizada(Request $request, $id)    {
+
+      $order = Orcamento::find($id);
+      $venda = 'Venda Realizada';
+      $order -> Status   = $venda;
+      $order -> save();
+           
+        toast('Status do Orçamento alterado para <b> Venda Realizada! </b> ','success');
+
+        return redirect('/orcamento/show_orcamento');
+    }
+    public function update_cancelado(Request $request, $id)    {
+
+      $order = Orcamento::find($id);
+      $cancelado = 'Cancelado';
+      $order -> Status   = $cancelado;
+      $order -> save();
+           
+        toast('Status do Orçamento alterado para <b> Cancelado! </b> ','success');
+
+        return redirect('/orcamento/show_orcamento');
+    }
+    public function update_pendente(Request $request, $id)    {
+
+      $order = Orcamento::find($id);
+      $pendente = 'Pendente';
+      $order -> Status   = $pendente;
+      $order -> save();
+           
+        toast('Status do Orçamento alterado para <b> Pendente </b> !','success');
 
         return redirect('/orcamento/show_orcamento');
     }

@@ -21,7 +21,7 @@
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="app-icon">
-  <img src="{{asset('/img/logo_principal/logo.png')}}" width="100px">
+  <img src="{{asset('/img/logo_principal/logo2.png')}}" width="10  0px">
    <b>  </b>
    </div>
     </div>
