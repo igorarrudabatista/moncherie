@@ -181,7 +181,7 @@ class OrcamentoController extends Controller
     public function update_vendarealizada(Request $request, $id)    {
 
       $order = Orcamento::find($id);
-      $venda = 'Venda Realizada';
+      $venda = 'Aprovado';
       $order -> Status   = $venda;
       $order -> save();
            

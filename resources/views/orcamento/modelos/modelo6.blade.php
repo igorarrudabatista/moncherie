@@ -192,12 +192,11 @@
       <td>{{$item->Nome_Produto}}</td>
       <td>{{$quantidade = $item->pivot['Quantidade'] }}</td>
       <td>R$ {{$preco= $item['Preco_Produto']}} </td>
-      <td> R$ {{$total1 = $preco * (int)$quantidade}} <?php $total2 += $total1; ?></td>
+      <td> R$ {{number_format($total1 = $preco * (int)$quantidade), 2}} <?php $total2 += $total1; ?></td>
     </tr>
 @endforeach
   </tbody>
       </table>
-         <h4>Adjustments</h4>
       <table class="table summary-table">
   <thead>
     <tr>
@@ -210,7 +209,7 @@
   </thead>
   <tbody>
     <tr class="simple">
-      <th scope="row">R$ {{$total2}}</th>
+      <th scope="row">R$ {{number_format($total2), 2}}</th>
       <th>R$ {{$taxa = $orcamento->Taxas}}</th>
       <th>R$ {{$desconto = $orcamento->Desconto}}</th>
    
@@ -224,7 +223,7 @@
         <div class="other-rates clearfix">
       <dl class="dl-horizontal total clearfix">
         <dt class="blue">Total</dt>
-        <dd>R$ {{$total = $total2 + $taxa -$desconto}}</dd>
+        <dd>R$ {{number_format($total = $total2 + $taxa - $desconto), 2, '.', ','}}</dd>
       </dl>
     </div>
       </div>

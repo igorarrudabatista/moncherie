@@ -35,7 +35,7 @@
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="app-icon">
-  <img src="{{asset('/img/logo_principal/logo2.png')}}" width="10  0px">
+  <img src="{{asset('/img/logo_principal/logo2.png')}}" width="120px">
    <b>  </b>
    </div>
     </div>
@@ -103,7 +103,7 @@
             <ul class="dropdown-menu sidebar-list">
                 <li class="sidebar-list-item"> <a href="{{asset('/produtos/create')}}">Criar Produto</a></li>
                 <li class="sidebar-list-item"> <a href="{{asset('/produtos/produtos')}}">Ver Produtos</a></li>
-                <li class="sidebar-list-item"> <a href="{{asset('/estoque/form_estoque')}}">Estoque</a></li>
+                {{-- <li class="sidebar-list-item"> <a href="{{asset('/estoque/form_estoque')}}">Estoque</a></li> --}}
 
             </ul>
       </li>

@@ -152,18 +152,18 @@
 
             <div class="col-md-4 mb-4">
               <label for="validationDefault03">Forma de Pagamento </label>
-              <input type="text" class="form-control" id="Forma_Pagamento" name="Forma_Pagamento" value="Cartão de crédito Pix e Boleto" required>
+              <input type="text" class="form-control" id="Forma_Pagamento" name="Forma_Pagamento" value="Cartão de crédito Pix e Boleto" >
             </div>
           </div>
           <div class="form-row">
 
             <div class="col-md-2 mb-4">
               <label for="validationDefault03">Desconto </label>
-              <input type="text" class="form-control" id="Desconto" name="Desconto" required >
+              <input type="text" class="form-control" id="Desconto" name="Desconto"  >
             </div>
             <div class="col-md-2 mb-4">
               <label for="validationDefault03">Taxas </label>
-              <input type="text" class="form-control" id="Taxas" name="Taxas" required >
+              <input type="text" class="form-control" id="Taxas" name="Taxas"  >
             </div>
           </div>
           <div class="form-row">

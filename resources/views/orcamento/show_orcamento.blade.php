@@ -136,21 +136,20 @@
         {{-- <div class="product-cell price"><span class="cell-label">Valor:</span> R$ {{$order->Valor}}  </div> --}}
           
         <div class="product-cell status-cell"> <span class="cell-label">Status:</span>
-          @if ($order->Status == 'Cancelado')
-          <span class="dropdown-item bg-danger text-light"> <i class="fas fa-times"></i> CANCELADO</span>      
-        
-          @elseif  ($order->Status == 'Venda Realizada')
-          <span class="dropdown-item bg-success text-light"> <i class="fas fa-check"></i> VENDA REALIZADA</span> 
-          
-        
-          @elseif  ($order->Status == 'Pendente')
-          <span class="dropdown-item bg-warning text-light"><i class="fas fa-exclamation-triangle"></i> PENDENTE</span> 
-        
-          {{-- @if ($order->Status == 'Cancelada')
-          <span class="status active">Cancelada</span>   --}}    
-          @else
-          <span class="dropdown-item bg-primary text-light"> SEM STATUS </span> 
-          @endif
+                @if ($order->Status == 'Cancelado')
+                <span class="dropdown-item bg-danger text-light"> <i class="fas fa-times">  </i>  CANCELADO   </span> 
+              
+                @elseif  ($order->Status == 'Aprovado')
+                <span class="dropdown-item bg-success text-light"> <i class="fas fa-check"></i> APROVADO </span> 
+                      
+                @elseif  ($order->Status == 'Pendente')
+                <span class="dropdown-item bg-warning text-light"><i class="fas fa-exclamation-triangle"></i> PENDENTE</span> 
+              
+                {{-- @if ($order->Status == 'Cancelada')
+                <span class="status active">Cancelada</span>   --}}    
+                @else
+                <span class="dropdown-item bg-primary text-light"> SEM STATUS </span> 
+                @endif
         
         </div> 
         
@@ -162,12 +161,12 @@
 
         <div class="btn-group" role="group">
           <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Status
+            Alterar Status
           </button>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
             <a class="dropdown-item bg-success text-light" href="{{asset('/orcamento/update/status_vendarealizada')}}/{{$order->id}}"> <i class="fas fa-check"></i> Aprovado</a>
             <a class="dropdown-item bg-warning text-light" href="{{asset('/orcamento/update/status_pendente')}}/{{$order->id}}"> <i class="fas fa-exclamation-triangle"></i> Pendente</a> 
-            <a class="dropdown-item bg-danger text-light"  href="{{asset('/orcamento/update/status_cancelado')}}/{{$order->id}}"> <i class="fas fa-times"></i>  Cancelar</a>
+            <a class="dropdown-item bg-danger text-light"  href="{{asset('/orcamento/update/status_cancelado')}}/{{$order->id}}"> <i class="fas fa-times"></i> Cancelar</a>
           </div>
         </div>
   
@@ -175,8 +174,8 @@
        
   
 <div class="btn-group product-cell pdf " role="group">
-  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn-info edit-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Gerar PDF
+  <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="far fa-file-pdf"></i>   Gerar PDF
   </button>
   
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

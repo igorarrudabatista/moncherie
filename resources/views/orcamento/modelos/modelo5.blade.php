@@ -246,14 +246,14 @@ td.total-value{
             <td>{{$item->Nome_Produto}}</td>
             <td>{{$quantidade = $item->pivot['Quantidade'] }}</td>
             <td>R$ {{$preco= $item['Preco_Produto']}} </td>
-            <td>R$ {{$total1 = $preco * (int)$quantidade}} <?php $total2 += $total1; ?> </td>
+            <td>R$ {{number_format($total1 = $preco * (int)$quantidade) . 2}} <?php $total2 += $total1; ?> </td>
           </tr>
           @endforeach
         
           <tr>
             <td colspan="2" class="empty"></td>
             <td colspan="2"><h5><strong>SUBTOTAL</strong></h5></td>
-            <td><h5><strong>R$ {{$total2}} </strong></h5></td>
+            <td><h5><strong>R$ {{number_format($total2). 2}} </strong></h5></td>
           </tr>
           <tr>
             <td colspan="2" class="empty"></td>
@@ -268,8 +268,8 @@ td.total-value{
           <tr>
             <td colspan="2" class="empty"></td>
             <td colspan="2" class="total"><h4><strong>TOTAL</strong></h4></td>
-            <td class="total-value"><h4><strong>R$ {{$total = $total2 + $taxa - $desconto}} </strong></h4></td>
-          </tr>
+            <td class="total-value"><h4><strong>R$ {{number_format ($total = $total2 + $taxa - $desconto). 2}} </strong></h4></td>
+          </tr> 
         </tbody>
        
       </table>

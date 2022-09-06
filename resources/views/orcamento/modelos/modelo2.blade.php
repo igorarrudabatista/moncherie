@@ -94,11 +94,11 @@
                                 <tr>
                                     <td class="col-md-3">{{$item->Nome_Produto}}</td>
                                     <td class="col-md-3">{{$quantidade = $item->pivot['Quantidade'] }}</td>
-                                    <td class="col-md-3">{{$preco= $item['Preco_Produto']}} </td>
+                                    <td class="col-md-3">{{number_format($preco= $item['Preco_Produto']), 2 }} </td> 
 
 
                                     <td class="col-md-3">
-                                        R$ {{$total1 = $preco * (int)$quantidade}} <?php $total2 += $total1; ?>  </td>
+                                        R$ {{number_format($total1 = $preco * (int)$quantidade), 2}} <?php $total2 += $total1; ?>  </td>
                                 </tr>
                          
                                 @endforeach
@@ -110,7 +110,7 @@
                                         <p> <strong>Descontos: </strong> </p>
                                     </td>
                                     <td>
-                                        <p> <strong>R$ {{$total2}} </strong> </p>
+                                        <p> <strong>R$ {{number_format($total2), 2}} </strong> </p>
                                         <p> <strong>R$ {{$taxa = $orcamento->Taxas}} </strong> </p>
                                         <p> <strong>R$ {{$desconto = $orcamento->Desconto}}  </strong> </p>
                                     </td>
@@ -120,7 +120,7 @@
                                         <h4><strong>Total:</strong></h4>
                                     </td>
                                     <td class="text-left">
-                                        <h4><strong>R$ {{$total = $total2 + $taxa - $desconto}} </strong></h4>
+                                        <h4><strong>R$ {{number_format ($total = $total2 + $taxa - $desconto), 2}} </strong></h4>
                                     </td>
                                 </tr>
 

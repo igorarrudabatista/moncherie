@@ -46,7 +46,7 @@ Route::middleware([
 //     return view('base');
 // }); 
 //Dashboard
-Route::get('/',                           [HomeController::class,     'home']);
+Route::get('/',                                   [HomeController::class,     'home']);
 
 // Usuários
 Route::get('/usuarios_listar',                    [UsuariosController::class, 'index']);

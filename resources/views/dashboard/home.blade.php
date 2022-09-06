@@ -28,6 +28,15 @@
 .card--4 .card__img, .card--4 .card__img--hover {
     background-image: url('{{asset('/img/dashboard/orders.jpg')}}');
 }
+.card--5 .card__img, .card--5 .card__img--hover {
+    background-image: url('{{asset('/img/dashboard/aprovados.jpg')}}');
+}
+.card--6 .card__img, .card--6 .card__img--hover {
+    background-image: url('{{asset('/img/dashboard/pendente.jpg')}}');
+}
+.card--7 .card__img, .card--7 .card__img--hover {
+    background-image: url('{{asset('/img/dashboard/danger.jpg')}}');
+}
 
 
 
@@ -148,10 +157,12 @@ border-bottom-right-radius: 12px;
 </style>
 
   <div class="app-content">
+
     <div class="app-content-header">
       <h1 class="app-content-headerText">Dashboard</h1>
 
     </div>
+
     <div class="app-content-actions">
       
      
@@ -244,8 +255,81 @@ border-bottom-right-radius: 12px;
       </article>  
         
         </section>
+    </div>
+    <div class="app-content-actions">
+      
+     
 
 
+
+      <section class="cards">
+        <article class="card card--5">
+          <div class="card__info-hover">
+           
+              <div class="card__clock-info">
+                <svg class="card__clock" >
+                  <path d="M28 0h-24c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4v-24c0-2.2-1.8-4-4-4zM14 24.828l-7.414-7.414 2.828-2.828 4.586 4.586 9.586-9.586 2.828 2.828-12.414 12.414z"></path>
+                </svg><span class="card__time"> {{$aprovado->count()}}</span>
+              </div>
+            
+          </div>
+          <div class="card__img"></div>
+          <a href="{{asset('/orcamento/show_orcamento') }}" class="card_link">
+            <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <span class="card__category"> <center>  </center></span>
+            <h3 class="card__title">Orçamentos Aprovados  </h3>
+         
+          </div>
+        </article>
+          
+          
+        <article class="card card--6">
+          <div class="card__info-hover">
+              <div class="card__clock-info">
+                <svg class="card__clock"  >
+                  <path d="M28 0h-24c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4v-24c0-2.2-1.8-4-4-4zM14 24.828l-7.414-7.414 2.828-2.828 4.586 4.586 9.586-9.586 2.828 2.828-12.414 12.414z"></path>
+                </svg><span class="card__time">{{$pendente->count()}}</span>
+              </div>
+            
+          </div>
+          <div class="card__img"></div>
+          <a href="{{asset('/orcamento/show_orcamento') }}" class="card_link">
+            <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <span class="card__category"> </span>
+            <h3 class="card__title">Orçamentos Pendentes </h3>
+          </div>
+        </article>  
+  
+        <article class="card card--7">
+          <div class="card__info-hover">
+          
+              <div class="card__clock-info">
+                <svg class="card__clock"  >
+                  <path d="M28 0h-24c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4v-24c0-2.2-1.8-4-4-4zM14 24.828l-7.414-7.414 2.828-2.828 4.586 4.586 9.586-9.586 2.828 2.828-12.414 12.414z"></path>
+                </svg><span class="card__time"> {{$cancelado->count()}}</span>
+              </div>
+            
+          </div>
+          <div class="card__img"></div>
+          <a href="{{asset('/orcamento/show_orcamento') }}" class="card_link">
+            <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <span class="card__category"> </span>
+            <h3 class="card__title">Orçamentos Cancelados</h3>
+          </div>
+        </article>  
+          
+       
+          
+          </section>
+
+
+        
         
 {{-- <div class="card text-center">
   <div class="card-header">

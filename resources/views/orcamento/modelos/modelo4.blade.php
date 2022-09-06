@@ -289,7 +289,7 @@
 
                                          <td class="unit">R$ {{$preco= $item['Preco_Produto']}} </td>
                                             <td class="qty"> {{$quantidade = $item->pivot['Quantidade'] }}</td>
-                                            <td class="total"> R$ {{$total1 = $preco * (int)$quantidade}} <?php $total2 += $total1; ?> </td>
+                                            <td class="total"> R$ {{number_format($total1 = $preco * (int)$quantidade), 2}} <?php $total2 += $total1; ?> </td>
     
                                         </tr>
                                         
@@ -300,7 +300,7 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td colspan="2">SUBTOTAL</td>
-                                            <td>R$ {{$total2}}</td>
+                                            <td>R$ {{number_format($total2), 2}}</td>
                                         </tr>
                                         <tr>
                                             <td colspan="2"></td>
@@ -316,7 +316,7 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td colspan="2">TOTAL</td>
-                                            <td>R$ {{$total = $total2 + $taxa - $desconto}}</td>
+                                            <td>R$ {{number_format($total = $total2 + $taxa - $desconto), 2}}</td>
                                         </tr> 
                                     </tfoot>
                                 </table>
