@@ -30,6 +30,7 @@
     </div>
   </div>
 
+  <div class="products-area-wrapper ">
 
 
     <form action="{{asset('/orcamento/')}}" method="POST" >
@@ -181,8 +182,6 @@
             <button class="btn btn-primary" type="submit" value="{{ trans('global.save') }}">Cadastrar Orçamento</button> 
 
             
-
-              
             </div>
           </div>
     </form>

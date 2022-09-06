@@ -49,7 +49,8 @@
             <div class="col-md-2 mb-3">
               <label for="validationDefault02"> <b>Telefone </b> </label>
             
-              <input type="text" class="form-control" id="Telefone" name="Telefone" Placeholder="(DDD)+Telefone" onkeypress="$(this).mask('(00) 00000-0000')"  >             </div>
+              <input type="text" class="form-control" id="Telefone" name="Telefone" Placeholder="(DDD)+Telefone" onkeypress="$(this).mask('(00) 00000-0000')"  >    
+    </div>
 {{-- OK  --}}
 
   <div class="form-row">
@@ -57,19 +58,14 @@
             <label for="validationDefaultUsername"> <b> E-mail </b></label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                <span class="input-group-text" id="inputGroupPrepend2"> @ </span>
               </div>
               <input type="text" class="form-control" id="Email" name="Email" >
-            </div>            </div>
+            </div>          
+  </div>
 
 
         
-{{--       
-          <div class="col-md-4 mb-6">
-            <label for="">Telefone/Celular </label>
-            <input type="text" class="form-control" id="Telefone" name="Telefone" Placeholder="(DDD)+Telefone" onkeypress="$(this).mask('(00) 00000-0000')" required>
-          </div>       
-        </div>      --}}
 
 
   
@@ -130,7 +126,8 @@
     <div class="col-md-3 mb-3">
       <label for="validationDefault03">  <b> Cidade </b> </label>
       <input type="text" class="form-control" id="Cidade" name="Cidade">
-    </div>    </div>
+    </div> 
+     </div>
   </div>
     <div class="form-group">
 
