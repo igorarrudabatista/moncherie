@@ -49,7 +49,7 @@
             <div class="col-md-2 mb-3">
               <label for="validationDefault02"> <b>Telefone </b> </label>
             
-              <input type="text" class="form-control" id="Telefone" name="Telefone" Placeholder="(DDD)+Telefone" onkeypress="$(this).mask('(00) 00000-0000')" required >             </div>
+              <input type="text" class="form-control" id="Telefone" name="Telefone" Placeholder="(DDD)+Telefone" onkeypress="$(this).mask('(00) 00000-0000')"  >             </div>
 {{-- OK  --}}
 
   <div class="form-row">
@@ -59,7 +59,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupPrepend2">@</span>
               </div>
-              <input type="text" class="form-control" id="Email" name="Email" required>
+              <input type="text" class="form-control" id="Email" name="Email" >
             </div>            </div>
 
 
@@ -75,24 +75,24 @@
   
     <div class="col-md-3 mb-3">
       <label for="validationDefault03"> <b> Site </b> </label>
-      <input type="text" class="form-control" id="Site" name="Site" Placeholder="www.site.com.br" required>
+      <input type="text" class="form-control" id="Site" name="Site" Placeholder="www.site.com.br" >
     </div>
 
     <div class="col-md-3 mb-3">
       <label for="validationDefault03">  <b> Endereço </b> </label>
-      <input type="text" class="form-control" id="Endereco" name="Endereco"  required>
+      <input type="text" class="form-control" id="Endereco" name="Endereco"  >
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationDefault03">  <b> CEP </b> </label>
-      <input type="text" class="form-control" id="Cep" name="Cep"  onkeypress="$(this).mask('00000-000')" required>
+      <input type="text" class="form-control" id="Cep" name="Cep"  onkeypress="$(this).mask('00000-000')" >
     </div>
     <div class="col-md-1 mb-1">
       <label for="validationDefault03"> <b> N°</b>  </label>
-      <input type="text" class="form-control" id="Numero" name="Numero"  required>
+      <input type="text" class="form-control" id="Numero" name="Numero"  >
     </div>
     <div class="col-md-2 mb-1">
       <label for="validationDefault03"> <b> Bairro </b>  </label>
-      <input type="text" class="form-control" id="Bairro" name="Bairro"  required>
+      <input type="text" class="form-control" id="Bairro" name="Bairro"  >
     </div>
     <div class="col-md-3 mb-3">
       <label  for="validationDefault03"> <b> Estado </b> </label>
@@ -129,18 +129,18 @@
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationDefault03">  <b> Cidade </b> </label>
-      <input type="text" class="form-control" id="Cidade" name="Cidade"  required>
+      <input type="text" class="form-control" id="Cidade" name="Cidade">
     </div>    </div>
   </div>
     <div class="form-group">
 
     <div class="col-md-4 mb-3">
       <label for="validationDefault03">  <b> Instagram </b> </label>
-      <input type="text" class="form-control" id="Instagram" name="Instagram"  required>
+      <input type="text" class="form-control" id="Instagram" name="Instagram">
     </div>
     <div class="col-md-4    mb-3">
       <label for="validationDefault03">  <b> Facebook </b> </label>
-      <input type="text" class="form-control" id="Facebook" name="Facebook"  required>
+      <input type="text" class="form-control" id="Facebook" name="Facebook">
     </div>
 </div>
 

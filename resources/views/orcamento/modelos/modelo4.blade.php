@@ -208,12 +208,11 @@
                     <div id="invoice">
                         <div class="toolbar hidden-print">
                             <div class="text-end">
-                                <button type="button" class="btn btn-dark">
-                                    <i class="fa fa-print"></i> Imprimir</button>
+                                {{-- <button type="button" class="btn btn-dark">
+                                    <i class="fa fa-print"></i> </button> --}}
                                 <!-- <button type="button" class="btn btn-danger"> -->
                                     <!-- <i class="fa fa-file-pdf-o"></i> Export as PDF</button> -->
                             </div>
-                            <hr>
                         </div>
                         
                         <div class="invoice overflow-auto">
@@ -317,18 +316,18 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td colspan="2">TOTAL</td>
-                                            <td>R$ {{$total = $total2 + $taxa -$desconto}}</td>
+                                            <td>R$ {{$total = $total2 + $taxa - $desconto}}</td>
                                         </tr> 
                                     </tfoot>
                                 </table>
                                 
                                 <div class="thanks">Obrigado!</div>
                                 <div class="notices">
-                                    <div>Mensagem:</div>
-                                    <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                                    <div></div>
+                                    <div class="notice">Obrigado!</div>
                                 </div>
                             </main>
-                            <footer>Invoice was created on a computer and is valid without the signature and seal.</footer>
+                            <footer>   {{$orcamento->empresa->Nome_Empresa ?? ''}} </footer>
                         </div>
                         <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
                         <div></div>
