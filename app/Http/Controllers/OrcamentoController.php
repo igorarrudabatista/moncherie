@@ -12,6 +12,8 @@ use PDF;
 use App\Exports\OrcamentoExport;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Facades\Excel;
+Use Alert;
+
 
 
 class OrcamentoController extends Controller
@@ -89,7 +91,7 @@ class OrcamentoController extends Controller
         $search = request('search');
 
         if ($search) {
-            $criar_orcamento = Orcamento::where([['Numero_Orcamento', 'like', '%' . $search . '%']])->get();
+            $criar_orcamento = Orcamento::where([['Numero_Orcamento', 'Empresa',  'like', '%' . $search . '%']])->get();
         } else {
             $criar_orcamento = Orcamento::all();
         }
@@ -408,10 +410,13 @@ class OrcamentoController extends Controller
 
     public function destroy($id)
     {
-        toast('Orçamento deletado com sucesso!','error');
+    // toast('Orçamento deletado com sucesso!','error');
 
-        Orcamento::findOrFail($id)->delete();
+    Orcamento::findOrFail($id)->delete();
+ //   Alert::question('Realemte deseja deletar este item?', '');
+
         return redirect('/orcamento/show_orcamento');
+        return back();
     }
 
 
