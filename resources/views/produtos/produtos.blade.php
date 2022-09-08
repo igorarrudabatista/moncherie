@@ -104,8 +104,9 @@
         @csrf
         @method('DELETE')
 
-        <button type="submit" class="btn btn-danger delete-btn"> <ion-icon name="trash-outline"> </ion-icon>Deletar</button>
-
+        <input name="_method" type="hidden" value="DELETE">
+        <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Deletar</button>
+    </form>
         </div>
       </div>
       

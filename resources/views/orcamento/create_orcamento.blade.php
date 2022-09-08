@@ -160,11 +160,11 @@
 
             <div class="col-md-2 mb-4">
               <label for="validationDefault03">Desconto </label>
-              <input type="text" class="form-control" id="Desconto" name="Desconto"  >
+              <input type="text" class="form-control" id="Desconto" placeholder="Valor" name="Desconto">
             </div>
             <div class="col-md-2 mb-4">
               <label for="validationDefault03">Taxas </label>
-              <input type="text" class="form-control" id="Taxas" name="Taxas"  >
+              <input type="text" class="form-control" id="Taxas" placeholder="Valor" name="Taxas">
             </div>
           </div>
           <div class="form-row">
