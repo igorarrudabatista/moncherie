@@ -350,7 +350,7 @@ form input[type=submit] {
       <h5 class="card-title">
         <img src="{{asset ('/img/empresa/')}}/{{$criar_empresas->image}}" width="200px" />
         
-      <h5 class="display-5"> <b> Nome da Empresa: </b> {{$criar_empresas->Nome_Empresa}}</h5>
+      <h6 class="display-7"> <b> Nome da Empresa: </b> {{$criar_empresas->Nome_Empresa}}</h6>
       
       <p class="card-text"> <b> CNPJ:             </b> {{$criar_empresas->Cnpj}}</p>
       <p class="card-text"> <b> Telefone:         </b> {{$criar_empresas->Telefone}}</p>
