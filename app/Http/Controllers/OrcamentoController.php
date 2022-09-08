@@ -91,7 +91,7 @@ class OrcamentoController extends Controller
         $search = request('search');
 
         if ($search) {
-            $criar_orcamento = Orcamento::where([['Numero_Orcamento', 'Empresa',  'like', '%' . $search . '%']])->get();
+            $criar_orcamento = Orcamento::where([['Numero_Orcamento',   'like', '%' . $search . '%']])->get();
         } else {
             $criar_orcamento = Orcamento::all();
         }
