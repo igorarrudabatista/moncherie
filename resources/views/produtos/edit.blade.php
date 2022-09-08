@@ -66,7 +66,7 @@
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault02">Categoria do Produto</label>
-      <input type="text" class="form-control" id="Categoria_Produto" name="Categoria_Produto" value="{{$editar_produto->Categoria_Produto}}" required>
+      <input type="text" class="form-control" id="Categoria_Produto" name="Categoria_Produto" value="{{$editar_produto->Categoria_Produto}}" >
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefaultUsername">Preço do Produto</label>
@@ -74,14 +74,14 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend2">R$</span>
         </div>
-        <input type="text" class="form-control" id="Preco_Produto" value="{{$editar_produto->Preco_Produto}}" name="Preco_Produto" required>
+        <input type="text" class="form-control" id="Preco_Produto" value="{{$editar_produto->Preco_Produto}}" name="Preco_Produto"  >
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-3 mb-3">
       <label for="validationDefault03">Quantidade </label>
-      <input type="text" class="form-control" id="Quantidade_Produto" value="{{$editar_produto->Quantidade_Produto}}" name="Quantidade_Produto"  required>
+      <input type="text" class="form-control" id="Quantidade_Produto" value="{{$editar_produto->Quantidade_Produto}}" name="Quantidade_Produto"  >
     </div>
     <div class="col-md-3 mb-4">
       <label for="validationDefault04"> Produto em Estoque? </label>

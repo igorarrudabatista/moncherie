@@ -49,7 +49,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend2">R$</span>
         </div>
-        <input type="text" class="form-control" id="Preco_Produto" name="Preco_Produto" onkeypress="$(this).mask('999.990,00')" >
+        <input type="text" class="form-control" id="Preco_Produto" name="Preco_Produto" >
       </div>
     </div>
   </div>
